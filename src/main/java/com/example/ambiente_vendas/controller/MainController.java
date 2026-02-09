@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 public class MainController {
 
     @FXML
-    private AnchorPane content;
+    private AnchorPane root;
 
     @FXML
     public void abrirHome() {
@@ -47,8 +47,8 @@ public class MainController {
                     getClass().getResource("/fxml/" + fxml)
             );
 
-            content.getChildren().clear();
-            content.getChildren().add(tela);
+            root.getChildren().clear();
+            root.getChildren().add(tela);
 
             AnchorPane.setTopAnchor(tela, 0.0);
             AnchorPane.setBottomAnchor(tela, 0.0);
