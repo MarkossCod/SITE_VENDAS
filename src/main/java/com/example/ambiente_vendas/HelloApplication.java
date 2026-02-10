@@ -5,34 +5,37 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class HelloApplication extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    Objects.requireNonNull(
+                            getClass().getResource("/fxml/Main.fxml"),
+                            "Main.fxml não encontrado em /fxml"
+                    )
+            );
 
-        FXMLLoader loader = new FXMLLoader(
-                HelloApplication.class.getResource("/fxml/Main.fxml")
-        );
+            Scene scene = new Scene(loader.load(), 800, 600);
 
-        Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Sistema com menu fixo!");
+            stage.setScene(scene);
 
-        stage.setTitle("Sistema com menu fixo!");
-        stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
 
-        // garante 800x600
-        stage.setWidth(800);
-        stage.setHeight(600);
+            stage.show();
 
-        // trava o redimensionamento
-        stage.setResizable(false);
-
-        // centraliza na tela (opcional, mas recomendado)
-        stage.centerOnScreen();
-
-        stage.show();
+        } catch (Exception e) {
+            System.err.println("Erro ao iniciar a aplicação:");
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

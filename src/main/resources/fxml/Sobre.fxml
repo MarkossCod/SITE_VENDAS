@@ -15,9 +15,6 @@
          </font>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/images.jpg" />
-         </image>
       </ImageView>
    </children>
 </AnchorPane>

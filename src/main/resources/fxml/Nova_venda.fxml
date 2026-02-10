@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: whitre;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="14.0" layoutY="23.0" text="Nova venda " textAlignment="JUSTIFY" textFill="#4971c6">
+      <Label layoutX="225.0" layoutY="17.0" prefHeight="58.0" prefWidth="283.0" text="Nova venda " textAlignment="JUSTIFY" textFill="#4971c6">
          <font>
             <Font name="Arial" size="50.0" />
          </font>
@@ -26,34 +26,35 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="140.0" layoutY="281.0" />
+      <TextField layoutX="140.0" layoutY="288.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField layoutX="140.0" layoutY="236.0" />
       <Label layoutX="9.0" layoutY="236.0" prefHeight="25.0" prefWidth="128.0" text="QUANTIDADE">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="8.0" layoutY="281.0" prefHeight="25.0" prefWidth="109.0" text="VALOR UNITÁRIO">
+      <Label layoutX="9.0" layoutY="288.0" prefHeight="25.0" prefWidth="109.0" text="VALOR UNITÁRIO">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="140.0" layoutY="332.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="9.0" layoutY="332.0" prefHeight="25.0" prefWidth="128.0" text="VALOR TOTAL">
+      <TextField layoutX="140.0" layoutY="338.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="14.0" layoutY="338.0" prefHeight="25.0" prefWidth="128.0" text="VALOR TOTAL">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="417.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
-      <Button layoutX="117.0" layoutY="417.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
-      <Button layoutX="260.0" layoutY="417.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
-      <Button layoutX="408.0" layoutY="417.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
-      <ImageView fitHeight="280.0" fitWidth="313.0" layoutX="329.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="14.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
+      <Button layoutX="117.0" layoutY="442.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
+      <Button layoutX="273.0" layoutY="442.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
+      <Button layoutX="431.0" layoutY="442.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
+      <ImageView fitHeight="280.0" fitWidth="313.0" layoutX="444.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagens/cadastro%20de%20venda%20.png" />
          </image>
       </ImageView>
       <ComboBox layoutX="140.0" layoutY="186.0" prefWidth="150.0" style="-fx-background-color: WHITRE; -fx-border-color: GRAY;" />
       <ComboBox layoutX="140.0" layoutY="129.0" prefWidth="150.0" style="-fx-background-color: WHITRE; -fx-border-color: GRAY;" />
+      <Button layoutX="609.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: red;" text="Sair" textFill="WHITE" />
    </children>
 </AnchorPane>

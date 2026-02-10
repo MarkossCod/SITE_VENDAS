@@ -11,10 +11,9 @@
    <children>
       <ImageView fitHeight="319.0" fitWidth="342.0" layoutX="14.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Downloads/Imagens_Projeto/tela%20menu.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="97.0" layoutY="450.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #4971c6;" text="Sair" textFill="WHITE">
+            <Image url="@../imagens/tela%20menu.png" />
+         </image></ImageView>
+      <Button layoutX="97.0" layoutY="450.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #4971c6; -fx-background-radius: 20;" text="Sair" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
@@ -24,22 +23,22 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Button layoutX="418.0" layoutY="149.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-border-color: #4971c6;" text="Clientes 👨" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="418.0" layoutY="149.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-background-radius: 50;" text="Clientes 👨" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="418.0" layoutY="288.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-border-color: #4971c6;" text="Vendas 💵" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="418.0" layoutY="288.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-background-radius: 50;" text="Vendas 💵" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="418.0" layoutY="220.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-border-color: #4971c6;" text="Produtos 📤" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="418.0" layoutY="220.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-background-radius: 50;" text="Produtos 📤" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="418.0" layoutY="351.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-border-color: #4971c6;" text="Relatórios 📄" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="418.0" layoutY="351.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #4971c6; -fx-background-radius: 50;" text="Relatórios 📄" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>

@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="670.0" style="-fx-background-color: whitre;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: whitre;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Cadastro de produtos" textFill="#4971c6">
+      <Label layoutX="201.0" layoutY="14.0" text="Cadastro de produtos" textFill="#4971c6">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TableView layoutY="340.0" prefHeight="205.0" prefWidth="670.0">
+      <TableView layoutY="340.0" prefHeight="259.0" prefWidth="800.0">
          <columns>
             <TableColumn prefWidth="164.0" text="NOME" />
             <TableColumn minWidth="0.0" prefWidth="74.0" text="MARCA" />
@@ -59,23 +59,24 @@
          </columns>
       </TableView>
       <Button layoutX="9.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
-      <Button layoutX="281.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
+      <Button layoutX="291.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
       <Button layoutX="104.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="ESPECIFICAR PRODUTO 📦" textFill="WHITE" />
-      <Button layoutX="414.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
-      <Button layoutX="536.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
-      <ImageView fitHeight="178.0" fitWidth="202.0" layoutX="364.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="421.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
+      <Button layoutX="558.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
+      <ImageView fitHeight="196.0" fitWidth="210.0" layoutX="496.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Downloads/Imagens_Projeto/MODELO_PRODUTO.png" />
+            <Image url="@../imagens/MODELO_PRODUTO.png" />
          </image>
       </ImageView>
-      <Label layoutX="358.0" layoutY="55.0" prefHeight="25.0" prefWidth="149.0" text="IMAGEM DO PRODUTO">
+      <Label layoutX="492.0" layoutY="63.0" prefHeight="25.0" prefWidth="149.0" text="IMAGEM DO PRODUTO">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Line endX="100.0" endY="-27.0" layoutX="458.0" layoutY="107.0" startX="100.0" startY="148.0" />
-      <Line endX="100.0" endY="-29.0" layoutX="257.0" layoutY="109.0" startX="100.0" startY="148.0" />
-      <Line endX="224.0" endY="112.5" layoutX="334.0" layoutY="143.0" startX="23.5" startY="114.5" />
-      <Line endX="-111.5" endY="-37.5" layoutX="468.0" layoutY="117.0" startX="89.5" startY="-37.5" />
+      <Line endX="100.0" endY="-27.0" layoutX="595.0" layoutY="108.0" startX="100.0" startY="148.0" />
+      <Line endX="100.0" endY="-29.0" layoutX="392.0" layoutY="109.0" startX="100.0" startY="148.0" />
+      <Line endX="224.0" endY="112.5" layoutX="470.0" layoutY="143.0" startX="23.5" startY="114.5" />
+      <Line endX="-111.5" endY="-37.5" layoutX="605.0" layoutY="118.0" startX="89.5" startY="-37.5" />
+      <Button layoutX="712.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: red;" text="Sair" textFill="WHITE" />
    </children>
 </AnchorPane>

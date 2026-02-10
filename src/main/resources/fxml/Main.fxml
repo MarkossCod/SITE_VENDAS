@@ -7,67 +7,42 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root"
-            prefWidth="800.0"
-            prefHeight="600.0"
-            minWidth="800.0"
-            minHeight="600.0"
-            maxWidth="800.0"
-            maxHeight="600.0"
-            style="-fx-background-color: white;"
-            xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.ambiente_vendas.controller.MainController">
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ambiente_vendas.controller.MainController">
 
     <children>
 
-        <!-- IMAGEM TOPO -->
-        <ImageView layoutX="0"
-                   layoutY="0"
-                   fitWidth="800.0"
-                   fitHeight="220.0"
-                   preserveRatio="false">
-            <image>
-                <Image url="@../imagens/tela inicial.png"/>
-            </image>
-        </ImageView>
-
         <!-- MENU -->
-        <MenuBar layoutX="0"
-                 layoutY="220.0"
-                 prefWidth="800.0"
-                 prefHeight="25.0">
-
+        <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="800.0" style="-fx-background-color: whitre;">
             <menus>
                 <Menu text="Home">
                     <items>
-                        <MenuItem text="Tela inicial" onAction="#abrirHome"/>
-                        <MenuItem text="Sair" onAction="#fecharPrograma"/>
+                        <MenuItem onAction="#abrirTelaInicial" text="Tela inicial" />
+                        <MenuItem onAction="#fecharPrograma" text="Sair" />
                     </items>
                 </Menu>
 
                 <Menu text="Cadastro">
                     <items>
-                        <MenuItem text="Clientes" onAction="#abrirClientes"/>
-                        <MenuItem text="Vendas" onAction="#abrirVendas"/>
+                        <MenuItem onAction="#abrirClientes" text="Clientes" />
+                        <MenuItem onAction="#abrirVendas" text="Vendas" />
+                        <MenuItem onAction="#abrirRelatorio" text="Relatório" />
                     </items>
                 </Menu>
 
                 <Menu text="Ajuda">
                     <items>
-                        <MenuItem text="Sobre nós" onAction="#sobrenos"/>
+                        <MenuItem onAction="#sobrenos" text="Sobre nós" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
 
-        <!-- ÁREA BRANCA (CONTEÚDO) -->
-        <AnchorPane fx:id="content"
-                    layoutX="0"
-                    layoutY="245.0"
-                    prefWidth="800.0"
-                    prefHeight="355.0"
-                    style="-fx-background-color: white;"/>
+        <!-- IMAGEM DA TELA INICIAL -->
+        <ImageView fx:id="imagemInicial" fitHeight="220.0" fitWidth="800.0" layoutY="27.0" preserveRatio="false">
+            <image>
+                <Image url="@../imagens/tela inicial.png" />
+            </image>
+        </ImageView>
 
     </children>
 </AnchorPane>

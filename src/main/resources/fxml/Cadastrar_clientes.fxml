@@ -63,11 +63,11 @@
         </ImageView>
 
         <!-- BOTÕES -->
-        <Button layoutX="20" layoutY="240" text="Novo 📄" />
-        <Button layoutX="110" layoutY="240" text="Cadastrar 📁" />
-        <Button layoutX="220" layoutY="240" text="Limpar campos 🗑" />
-        <Button layoutX="360" layoutY="240" text="Limpar tabela 📑" />
-        <Button layoutX="510" layoutY="240" text="Salvar alterações ✅" />
+        <Button layoutX="20" layoutY="240" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
+        <Button layoutX="110" layoutY="240" style="-fx-background-color: #4971c6;" text="Cadastrar 📁" textFill="WHITE" />
+        <Button layoutX="220" layoutY="240" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
+        <Button layoutX="360" layoutY="240" style="-fx-background-color: #4971c6;" text="Limpar tabela 📑" textFill="WHITE" />
+        <Button layoutX="510" layoutY="240" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="#fffbfb" />
 
         <!-- TABELA -->
         <TableView layoutY="280" prefHeight="320.0" prefWidth="800">
@@ -83,6 +83,7 @@
                 <TableColumn text="SEXO" />
             </columns>
         </TableView>
+      <Button layoutX="668.0" layoutY="240.0" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: red;" text="Sair" textFill="WHITE" />
 
     </children>
 </AnchorPane>
