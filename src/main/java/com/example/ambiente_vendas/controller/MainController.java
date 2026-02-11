@@ -18,29 +18,99 @@ public class MainController {
     @FXML
     private MenuBar menuBar;
 
+    /* ==============================
+       TELA INICIAL (COM MENU)
+       ============================== */
+
     @FXML
     public void abrirTelaInicial() {
-        root.getChildren().remove(menuBar); // remove o menu
-        carregarTela("Tela_login.fxml");
+
+        try {
+
+            // 🔹 Mostra novamente o MenuBar
+            menuBar.setVisible(true);
+            menuBar.setManaged(true);
+
+            root.getChildren().clear();
+
+            FXMLLoader loader = new FXMLLoader(
+                    Objects.requireNonNull(
+                            getClass().getResource("/fxml/Main.fxml")
+                    )
+            );
+
+            AnchorPane telaPrincipal = loader.load();
+
+            root.getChildren().add(telaPrincipal);
+
+            AnchorPane.setTopAnchor(telaPrincipal, 0.0);
+            AnchorPane.setBottomAnchor(telaPrincipal, 0.0);
+            AnchorPane.setLeftAnchor(telaPrincipal, 0.0);
+            AnchorPane.setRightAnchor(telaPrincipal, 0.0);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    /* ==============================
+       LOGIN (SEM MENU)
+       ============================== */
+
+    @FXML
+    public void abrirLogin() {
+
+        try {
+
+            // 🔹 Esconde completamente o MenuBar
+            menuBar.setVisible(false);
+            menuBar.setManaged(false);
+
+            FXMLLoader loader = new FXMLLoader(
+                    Objects.requireNonNull(
+                            getClass().getResource("/fxml/Tela_login.fxml"),
+                            "Tela_login.fxml não encontrado"
+                    )
+            );
+
+            Node tela = loader.load();
+
+            root.getChildren().clear();
+            root.getChildren().add(tela);
+
+            AnchorPane.setTopAnchor(tela, 0.0);
+            AnchorPane.setBottomAnchor(tela, 0.0);
+            AnchorPane.setLeftAnchor(tela, 0.0);
+            AnchorPane.setRightAnchor(tela, 0.0);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /* ==============================
+       TELAS SEM MENU
+       ============================== */
 
     @FXML
     public void abrirClientes() {
-        adicionarMenuSeNecessario();
+        root.getChildren().clear();
         carregarTela("Cadastrar_clientes.fxml");
     }
 
     @FXML
     public void abrirVendas() {
-        adicionarMenuSeNecessario();
+        root.getChildren().clear();
         carregarTela("Nova_venda.fxml");
     }
 
     @FXML
     public void abrirRelatorio() {
-        adicionarMenuSeNecessario();
+        root.getChildren().clear();
         carregarTela("Relatorio.fxml");
     }
+
+    /* ============================== */
 
     @FXML
     public void sobrenos() {
@@ -60,19 +130,11 @@ public class MainController {
         Platform.exit();
     }
 
-    @FXML
-    private void sair() {
-        abrirTelaInicial();
-    }
-
-    private void adicionarMenuSeNecessario() {
-        if (!root.getChildren().contains(menuBar)) {
-            root.getChildren().add(0, menuBar); // menu sempre no topo
-        }
-    }
+    /* ============================== */
 
     private void carregarTela(String fxml) {
         try {
+
             FXMLLoader loader = new FXMLLoader(
                     Objects.requireNonNull(
                             getClass().getResource("/fxml/" + fxml),
@@ -82,26 +144,33 @@ public class MainController {
 
             Node tela = loader.load();
 
-            // remove tudo que NÃO é menu
-            root.getChildren().removeIf(node -> node != menuBar);
+            Object controller = loader.getController();
+
+            if (controller instanceof RelatorioController) {
+                ((RelatorioController) controller).setMainController(this);
+            }
+
+            if (controller instanceof ClientesController) {
+                ((ClientesController) controller).setMainController(this);
+            }
 
             root.getChildren().add(tela);
 
-            AnchorPane.setTopAnchor(
-                    tela,
-                    root.getChildren().contains(menuBar) ? 25.0 : 0.0
-            );
+            AnchorPane.setTopAnchor(tela, 0.0);
             AnchorPane.setBottomAnchor(tela, 0.0);
             AnchorPane.setLeftAnchor(tela, 0.0);
             AnchorPane.setRightAnchor(tela, 0.0);
 
         } catch (Exception e) {
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
             alert.setHeaderText("Erro ao abrir a tela");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
+
             e.printStackTrace();
         }
     }
+
 }

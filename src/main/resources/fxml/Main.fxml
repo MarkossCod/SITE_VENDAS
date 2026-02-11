@@ -16,7 +16,7 @@
             <menus>
                 <Menu text="Home">
                     <items>
-                        <MenuItem onAction="#abrirTelaInicial" text="Tela inicial" />
+                        <MenuItem text="Login" onAction="#abrirLogin"/>
                         <MenuItem onAction="#fecharPrograma" text="Sair" />
                     </items>
                 </Menu>

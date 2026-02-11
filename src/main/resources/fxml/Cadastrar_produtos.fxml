@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: whitre;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: whitre;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ambiente_vendas.controller.ProdutosController">
    <children>
       <Label layoutX="201.0" layoutY="14.0" text="Cadastro de produtos" textFill="#4971c6">
          <font>
@@ -23,15 +23,15 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="147.0" layoutY="75.0" />
+      <TextField layoutX="147.0" layoutY="75.0" onAction="#nomeproduto" />
       <Label layoutY="113.0" prefHeight="25.0" prefWidth="143.0" text="CÓDIGO DO PRODUTO">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="147.0" layoutY="203.0" />
-      <TextField layoutX="147.0" layoutY="156.0" />
-      <TextField layoutX="147.0" layoutY="113.0" />
+      <TextField layoutX="147.0" layoutY="203.0" onAction="#marca" />
+      <TextField layoutX="147.0" layoutY="156.0" onAction="#valor" />
+      <TextField layoutX="147.0" layoutY="113.0" onAction="#idproduto" />
       <Label layoutX="8.0" layoutY="156.0" prefHeight="25.0" prefWidth="128.0" text="VALOR DO PRODUTO">
          <font>
             <Font size="13.0" />
@@ -42,7 +42,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="147.0" layoutY="254.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField layoutX="147.0" layoutY="254.0" onAction="#descricao" prefHeight="25.0" prefWidth="149.0" />
       <Label layoutX="9.0" layoutY="254.0" prefHeight="25.0" prefWidth="72.0" text="DESCRIÇÃO">
          <font>
             <Font size="13.0" />
@@ -58,11 +58,12 @@
             <TableColumn prefWidth="109.0" text="CATEGORIA" />
          </columns>
       </TableView>
-      <Button layoutX="9.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
-      <Button layoutX="291.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
-      <Button layoutX="104.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="ESPECIFICAR PRODUTO 📦" textFill="WHITE" />
-      <Button layoutX="421.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
-      <Button layoutX="558.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
+      <Button layoutX="9.0" layoutY="309.0" mnemonicParsing="false" onAction="#abrirnovo" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #4971c6;" text="Novo 📄" textFill="WHITE" />
+      <Button layoutX="291.0" layoutY="309.0" mnemonicParsing="false" onAction="#limparcampos" style="-fx-background-color: #4971c6;" text="Limpar campos 🗑" textFill="WHITE" />
+      <Button layoutX="104.0" layoutY="309.0" mnemonicParsing="false" onAction="#limparprodutos" style="-fx-background-color: #4971c6;" text="ESPECIFICAR PRODUTO 📦" textFill="WHITE" />
+      <Button layoutX="421.0" layoutY="309.0" mnemonicParsing="false" onAction="#limpartabela" style="-fx-background-color: #4971c6;" text="Limpar Tabela 📑" textFill="WHITE" />
+      <Button layoutX="558.0" layoutY="309.0" mnemonicParsing="false" onAction="#salvaralteracoes" style="-fx-background-color: #4971c6;" text="Salvar alterações ✅" textFill="WHITE" />
+      <Button layoutX="712.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnsair" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: red;" text="Sair" textFill="WHITE" />
       <ImageView fitHeight="196.0" fitWidth="210.0" layoutX="496.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagens/MODELO_PRODUTO.png" />
@@ -77,6 +78,5 @@
       <Line endX="100.0" endY="-29.0" layoutX="392.0" layoutY="109.0" startX="100.0" startY="148.0" />
       <Line endX="224.0" endY="112.5" layoutX="470.0" layoutY="143.0" startX="23.5" startY="114.5" />
       <Line endX="-111.5" endY="-37.5" layoutX="605.0" layoutY="118.0" startX="89.5" startY="-37.5" />
-      <Button layoutX="712.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: red;" text="Sair" textFill="WHITE" />
    </children>
 </AnchorPane>
