@@ -1,65 +1,110 @@
 package com.example.ambiente_vendas.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import com.example.ambiente_vendas.DAO.ProdutoDAO;
+import com.example.ambiente_vendas.Model.Produto;
+import javafx.scene.control.Alert;
+
 
 public class ProdutosController {
 
-    // ===== TEXTFIELDS (opcional se quiser usar depois) =====
+    private MainController mainController;
+    private ProdutoDAO produtoDAO = new ProdutoDAO();
 
     @FXML
-    private void nomeproduto() {
-        System.out.println("Nome do produto digitado");
+    private TextField nomeField;
+    @FXML
+    private TextField codigoField;
+    @FXML
+    private TextField valorField;
+    @FXML
+    private TextField marcaField;
+    @FXML
+    private TextField descricaoField;
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+
+        if (this.mainController != null) {
+            this.mainController.getMenuBar().setVisible(false);
+            this.mainController.getMenuBar().setManaged(false);
+        }
     }
 
     @FXML
-    private void marca() {
-        System.out.println("Marca digitada");
+    private void abrirNovo() {
+        limparCampos();
     }
 
     @FXML
-    private void valor() {
-        System.out.println("Valor digitado");
+    private void especificarProduto() {
+        System.out.println("Produto especificado.");
     }
 
     @FXML
-    private void idproduto() {
-        System.out.println("ID do produto digitado");
+    private void limparCampos() {
+        nomeField.clear();
+        codigoField.clear();
+        valorField.clear();
+        marcaField.clear();
+        descricaoField.clear();
     }
 
     @FXML
-    private void descricao() {
-        System.out.println("Descrição digitada");
-    }
-
-    // ===== BOTÕES =====
-
-    @FXML
-    private void abrirnovo() {
-        System.out.println("Novo produto");
+    private void limparTabela() {
+        System.out.println("Tabela limpa.");
     }
 
     @FXML
-    private void limparcampos() {
-        System.out.println("Campos limpos");
-    }
+    private void salvarAlteracoes() {
 
-    @FXML
-    private void limparprodutos() {
-        System.out.println("Especificar produto");
-    }
+        try {
 
-    @FXML
-    private void limpartabela() {
-        System.out.println("Tabela limpa");
-    }
+            String nome = nomeField.getText();
+            double preco = Double.parseDouble(valorField.getText());
+            String marca = marcaField.getText();
+            String descricao = descricaoField.getText();
 
-    @FXML
-    private void salvaralteracoes() {
-        System.out.println("Alterações salvas");
+            Produto produto = new Produto(nome, preco, marca, descricao);
+
+            produtoDAO.salvar(produto);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Sucesso");
+            alert.setHeaderText(null);
+            alert.setContentText("Produto salvo com sucesso!");
+            alert.showAndWait();
+
+            limparCampos();
+
+        } catch (NumberFormatException e) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Valor inválido");
+            alert.setContentText("Digite um número válido para o preço.");
+            alert.showAndWait();
+
+        } catch (Exception e) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Erro ao salvar");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void btnsair() {
-        System.out.println("Saindo da tela de produtos");
+        if (mainController != null) {
+            mainController.abrirTelaInicial();
+            mainController.getMenuBar().setVisible(true);
+            mainController.getMenuBar().setManaged(true);
+        }
     }
 }
+

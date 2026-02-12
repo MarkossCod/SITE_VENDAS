@@ -1,6 +1,7 @@
 module com.example.ambiente_vendas {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.ambiente_vendas to javafx.fxml;

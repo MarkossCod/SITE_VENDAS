@@ -19,9 +19,15 @@ public class MainController {
     private MenuBar menuBar;
 
     /* ==============================
+       GETTER DO MENU
+       ============================== */
+    public MenuBar getMenuBar() {
+        return menuBar;
+    }
+
+    /* ==============================
        TELA INICIAL (COM MENU)
        ============================== */
-
     @FXML
     public void abrirTelaInicial() {
 
@@ -39,7 +45,7 @@ public class MainController {
                     )
             );
 
-            AnchorPane telaPrincipal = loader.load();
+            Node telaPrincipal = loader.load();
 
             root.getChildren().add(telaPrincipal);
 
@@ -56,13 +62,11 @@ public class MainController {
     /* ==============================
        LOGIN (SEM MENU)
        ============================== */
-
     @FXML
     public void abrirLogin() {
 
         try {
 
-            // 🔹 Esconde completamente o MenuBar
             menuBar.setVisible(false);
             menuBar.setManaged(false);
 
@@ -89,23 +93,51 @@ public class MainController {
     }
 
     /* ==============================
-       TELAS SEM MENU
+       CLIENTES (COM MENU)
        ============================== */
-
     @FXML
     public void abrirClientes() {
+
+        menuBar.setVisible(true);
+        menuBar.setManaged(true);
+
         root.getChildren().clear();
         carregarTela("Cadastrar_clientes.fxml");
     }
 
     @FXML
+    public void abrirProdutos() {
+
+        menuBar.setVisible(true);
+        menuBar.setManaged(true);
+
+        root.getChildren().clear();
+        carregarTela("Cadastrar_produtos.fxml");
+    }
+
+
+    /* ==============================
+       VENDAS (SEM MENU)
+       ============================== */
+    @FXML
     public void abrirVendas() {
+
+        menuBar.setVisible(false);
+        menuBar.setManaged(false);
+
         root.getChildren().clear();
         carregarTela("Nova_venda.fxml");
     }
 
+    /* ==============================
+       RELATÓRIO (COM MENU)
+       ============================== */
     @FXML
     public void abrirRelatorio() {
+
+        menuBar.setVisible(true);
+        menuBar.setManaged(true);
+
         root.getChildren().clear();
         carregarTela("Relatorio.fxml");
     }
@@ -154,6 +186,15 @@ public class MainController {
                 ((ClientesController) controller).setMainController(this);
             }
 
+            if (controller instanceof VendasController) {
+                ((VendasController) controller).setMainController(this);
+            }
+
+            // 🔥 ADICIONE ISSO AQUI
+            if (controller instanceof ProdutosController) {
+                ((ProdutosController) controller).setMainController(this);
+            }
+
             root.getChildren().add(tela);
 
             AnchorPane.setTopAnchor(tela, 0.0);
@@ -172,5 +213,4 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
 }
